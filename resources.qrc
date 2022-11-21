@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/window">
+        <file>images/poll.png</file>
+        <file>images/configure.png</file>
+    </qresource>
+</RCC>
