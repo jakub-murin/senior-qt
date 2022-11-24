@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <QMessageBox>
+#include "settingsdialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,7 +14,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//  QMessageBox::information(this, "Configure", "TODO: show configure dialog");
 void MainWindow::on_actionClose_triggered()
 {
     this->close();
@@ -27,6 +26,8 @@ void MainWindow::on_actionPoll_triggered()
 
 void MainWindow::on_actionSettings_triggered()
 {
-    QMessageBox::information(this, "Configure", "TODO: show configure dialog");
+    // QMessageBox::information(this, "Configure", "TODO: show configure dialog");
+    SettingsDialog *dialog = new SettingsDialog(this);
+    dialog->exec();
 }
 

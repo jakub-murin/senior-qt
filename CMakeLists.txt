@@ -14,13 +14,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
+file(GLOB SOURCES "./*.cpp")
+file(GLOB INCLUDES "./*.h")
+file(GLOB UI_FILES "./*.ui")
+
 set(TS_FILES qt-hello_de_DE.ts)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        ${SOURCES}
+        ${INCLUDES}
+        ${UI_FILES}
+        # main.cpp
+        # mainwindow.cpp
+        # mainwindow.h
+        # mainwindow.ui
         ${TS_FILES}
 )
 
@@ -69,3 +76,11 @@ install(TARGETS qt-hello
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(qt-hello)
 endif()
+
+
+# not needed?
+# find_package(Qt6 REQUIRED COMPONENTS LinguistTools)
+#qt6_add_translations(hellotr
+#    TS_FILES hellotr_la.ts
+#    QM_FILES_OUTPUT_VARIABLE qm_files)
+#install(FILES ${qm_files} DESTINATION ${INSTALL_EXAMPLEDIR})
