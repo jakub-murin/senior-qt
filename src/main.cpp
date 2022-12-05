@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +18,16 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
+//    QFontDatabase *fdb = new QFontDatabase ;
+    QStringList fam = QFontDatabase::families();
+
+    qDebug() << "QFontDatabase::Any: available font families";
+    for(int i=0 ; i< fam.count(); i++)
+    {
+    qDebug() << fam[i];
+    }
+
     MainWindow w;
     w.show();
     return a.exec();
