@@ -11,7 +11,9 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     QValidator *validator = new QIntValidator(5, 86400, this);
     ui->pollIntervalInput->setText("60");
     ui->pollIntervalInput->setValidator(validator);
-
+    connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), ui->spinBox, SLOT(setValue(int)));
+    connect(ui->spinBox, SIGNAL(valueChanged(int)), ui->horizontalSlider, SLOT(setValue(int)));
+    connect(ui->spinBox, SIGNAL(valueChanged(int)), this, SLOT(jakub_slot(int)));
 }
 
 SettingsDialog::~SettingsDialog()
@@ -30,5 +32,10 @@ void SettingsDialog::on_buttonBox_accepted()
 void SettingsDialog::on_buttonBox_rejected()
 {
     reject();
+}
+
+void SettingsDialog::jakub_slot(int foo)
+{
+    qDebug() << "hello" << foo;
 }
 
