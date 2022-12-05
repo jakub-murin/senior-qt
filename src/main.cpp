@@ -28,6 +28,10 @@ int main(int argc, char *argv[])
     qDebug() << fam[i];
     }
 
+    QFont font("Sans Serif");
+//    font.setStyleHint(QFont::Monospace);
+    QApplication::setFont(font);
+
     MainWindow w;
     w.show();
     return a.exec();
