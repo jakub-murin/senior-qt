@@ -16,3 +16,10 @@ docker run -it --entrypoint /bin/bash
    localhost/qt-hello:0.0.4
 ```
 
+# Issues
+
+1. Cannot open a model dialog
+
+>  Wayland does not support QWindow::requestActivate()
+
+
