@@ -21,6 +21,7 @@ void MainWindow::on_actionClose_triggered()
 
 void MainWindow::on_actionPoll_triggered()
 {
+
     ui->statusbar->showMessage("Polling...");
 }
 

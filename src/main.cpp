@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     qDebug() << "QFontDatabase::Any: available font families";
     for(int i=0 ; i< fam.count(); i++)
     {
-    qDebug() << fam[i];
+        qDebug() << fam[i];
     }
 
     QFont font("Sans Serif");

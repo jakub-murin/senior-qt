@@ -14,6 +14,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), ui->spinBox, SLOT(setValue(int)));
     connect(ui->spinBox, SIGNAL(valueChanged(int)), ui->horizontalSlider, SLOT(setValue(int)));
     connect(ui->spinBox, SIGNAL(valueChanged(int)), this, SLOT(jakub_slot(int)));
+    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(font_click()));
 }
 
 SettingsDialog::~SettingsDialog()
@@ -37,5 +38,10 @@ void SettingsDialog::on_buttonBox_rejected()
 void SettingsDialog::jakub_slot(int foo)
 {
     qDebug() << "hello" << foo;
+}
+
+void SettingsDialog::font_click()
+{
+    qDebug() << ui->pushButton->property("font").value<QFont>().family();
 }
 

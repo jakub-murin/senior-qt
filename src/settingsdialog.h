@@ -19,6 +19,7 @@ private slots:
     void on_buttonBox_accepted();
     void on_buttonBox_rejected();
     void jakub_slot(int foo);
+    void font_click();
 
 private:
     Ui::SettingsDialog *ui;
